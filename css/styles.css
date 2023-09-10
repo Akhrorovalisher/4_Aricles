@@ -17,11 +17,12 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
+  font-family: "Bebas Neue", Arial, sans-serif;
+  font-size: 18px;
+  letter-spacing: 2px;
   line-height: 1.5;
-  background-color: #fff;
-  color: #222;
+  background-color: #222;
+
 }
 
 img {
@@ -29,17 +30,241 @@ img {
   height: auto;
 }
 
-/* CONTAINER */
-.container {
-  width: 100%;
-  min-width: 100%;
-  padding-left: 50px;
-  padding-right: 50px;
-  margin-left: auto;
-  margin-right: auto;
+*:focus {
+  outline: 2px dashed #1e90ff;
+  outline-offset: 2px ;
 }
 
 /* MAIN CONTENT */
 .main-content {
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* GLOBAL-WRAPPER */
+.global-wrapper {
+  flex-grow: 1;
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* HERO */
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  width: 100%;
+  max-width: 600px;
+  background-image: url(../img/left-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+}
+
+.hero-content {
+  max-width: 285px;
+}
+
+.hero-heading {
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: normal;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.hero-link {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #1E90FF;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.hero-link:hover {
+  background-color: rgba(30, 144, 255, 0.80);
+}
+
+.hero-link:active {
+  background-color: rgba(30, 144, 255, 0.60);
+}
+
+.hero-link-inner {
+  display: flex;
+  padding: 12px 24px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.hero-link-inner::before {
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+  background-image: url(../img/Vector.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  content: "";
+}
+
+
+/* MAIN */
+
+.main {
+  width: 100%;
+  min-width: 600px;
+  padding: 54px;
+  background-color: #fff;
+}
+
+.main-heading {
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.main-divider {
+  height: 1px;
+  border: 0;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  background-color: #999;
+}
+
+.main-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 24px;
+}
+
+.main-item:not(:last-child) {
+  margin-bottom: 10px;
+
+}
+
+
+/* ITEM-LATES-VIDEOS  */
+.item-latest-videos{
+  display: flex;
+}
+
+.main-videos-img {
+  width: 160px;
+  height: auto;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.main-videos-info {
+  padding: 16px;
+}
+
+.main-videos-heading {
+  margin-top: 0;
+  margin-bottom: 4px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.main-videos-link {
+  display: inline-block;
+  text-decoration: none;
+  color: #222;
+}
+
+.main-videos-link:hover {
+  color: #1e90ff;
+}
+
+.main-videos-link:active {
+  opacity: 0.6;
+}
+
+
+.main-videos-meta {
+  display: flex;
+  align-items: center;
+  color: #888;
+  font-family: "Roboto Condensed", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: normal;
+}
+
+.published-and-views {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.published-and-views:not(:last-child) {
+  margin-right: 24px;
+}
+
+.published-and-views::before{
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  content: "";
+}
+
+.main-videos-published-at::before{
+  background-image: url("../img/icon-clock\ 1.svg");
+}
+
+.main-videos-views::before {
+  background-image: url("../img/visibility_black_24dp\ 1.svg");
+}
+
+.load-more-button {
+  display: block;
+  width: 100%;
+  font-family: "Roboto Condensed", sans-serif;
+  padding: 12px;
+  border: 0;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: normal;
+  background-color: #1e90ff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.load-more-button:hover {
+  opacity: 0.8;
+}
+
+.load-more-button:active {
+  opacity: 0.6;
+}
+
+/* RETINA BG */
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) {
+  .hero {
+    background-image: url(../img/left-bg@2x.jpg);
+  }
 }
